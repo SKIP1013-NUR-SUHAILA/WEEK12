@@ -1,0 +1,124 @@
+package myMethod;
+import java.util.Scanner;
+class MethodExer1 {
+
+	public static void main(String[] args) {
+		// if no same parameter, create new method..
+		
+		int x=2, y=2;
+		System.out.println("Introduction for Method"); // in main method
+		showMessage(); // call method ; it will print what inside that method
+		System.out.println("Hello Jitra"); // in main method
+		showMessage1();
+		showMessage("Suhaila"); // ada parameter "suhaila".. once declare method call you need to create method for it.
+		showMessage(5);
+		showMessage("Emelda,14"); // make sure declare data type and variable for this method call..dalam method call ni jawapan dia.
+		showMessage(x,y);
+		int total = showSum(6,10);//method baru, to get the total sum.. guna return..
+								  // (x,y) pon boleh
+		System.out.println("\nTotal sum is: " + total); 
+		int avg = total/2;
+		System.out.println("Average is: " + avg); 
+		double total2 = showSum(3.4, 10.6);
+		System.out.println("\nTotal2 of Double is: " + total2); 
+		double avg1 = total2/2;
+		System.out.println("Average1 is: " + avg1); 
+		int total3 = showSum();
+		System.out.println("Total3 of Int  is: " + total3); 
+
+		double total4 = showSumDouble(x,y);
+		System.out.printf("Total4 of Double  is: %.2f" , total4); 
+
+	}
+
+	// all new method
+	 public static void showMessage() {
+		System.out.println("Hello Malaysia"); 
+
+	}
+
+	
+	public static void showMessage1() {
+		System.out.println("Hello UUM");
+
+	}
+
+	/* public static void showMessage(String name) { // kena declare data type for that variable..based on yg dlm method..
+		System.out.println("Name is : " + name); */
+	
+	public static void showMessage(String name) { // kena declare data type for that variable..based on yg dlm method..
+		System.out.println("\n");
+		System.out.println("Name is : " + name);
+//WHY IF KITA \N\T DEKAT SOP TU..NANTI DEKAT YG BAWAH VARAIABLE NAME TU PON GERAK JUGAK??
+//
+	}
+	
+	
+	public static void showMessage(int num) {
+		System.out.println("Num is : " + num);
+
+	}
+	
+	public static void showMessage(String name, int num) {
+		System.out.println("Name is: " + name +" " + "Num is: " + num);
+		for(int i=0; i<num; i++) {
+			System.out.println("Num is : " + num);
+
+		}
+	}
+	
+	public static void showMessage(int a, int b) {
+		int sum=0; //local variable; just guna dlm method ni
+		System.out.println("\nFirst num is : " + a);
+		System.out.println("Second num is : " + b);
+		sum = a+ b;
+		System.out.println("Sum is : " + sum);
+
+	}
+	
+	public static int showSum(int a, int b) {
+		int c=0;
+		c = a+b;
+		return c;
+	}
+	
+	//double total2 = showSum(3.4, 10.6);
+	public static double showSum(double d, double e) {
+		double c=0;
+		c = d+e;
+		return c;
+	}
+	
+	
+	//int total3 = showSum();
+	public static int showSum() {
+		
+		int[] number = new int[5];
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nEnter five numbers : ");
+		int sum=0; 
+			for(int i=0; i<number.length; i++) {
+			    number[i] = input.nextInt();
+				sum = sum + number[i];
+			}
+				return sum;			
+	}
+	
+	public static double showSumDouble(int x, int y) {
+		
+		double[][] num = new double[x][y]; // can declare num siap2 jugak
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nEnter four numbers for row and column: ");
+		double sum=0; 
+			for(int i=0; i<num.length; i++) {
+				for(int j=0; j<num.length; j++) {
+			    num[i][j]= input.nextDouble();
+				sum = sum + num[i][j];
+				}
+			}		
+				return sum;
+				
+		}
+}
